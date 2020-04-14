@@ -1,17 +1,14 @@
-import logger from './logger'
-import { getWeather } from './data/weather'
-import { Direction, Route, Weather } from './models'
+import chalk from 'chalk'
 
-const testRoute: Route = {
-  name: 'Shem Creek',
-  direction: 'NorthEast',
-  latitude: 32.79329,
-  longitude: -79.876702
+if (process.env.NODE_ENV === 'development') {
+  console.log(
+    chalk.black.bgGreen.bold(
+      '========= Loading Environment from .env =========='
+    )
+  )
+  require('dotenv').config({
+    path: require('find-config')('.env', { cwd: __dirname })
+  })
 }
 
-async function getData () {
-  const weather: Weather[] = await getWeather(testRoute)
-  logger.info(weather)
-}
-
-getData()
+require('./main')
