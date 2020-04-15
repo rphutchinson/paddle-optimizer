@@ -20,5 +20,6 @@ test('happy path call', async () => {
   const mock = new MockAdapter(axios)
   mock.onGet(baseUri).reply(200, mockResponse)
   const result = await getTide(testRoute)
-  logger.info(result)
+  //logger.info(result)
+  expect(result).toBeDefined()
 })

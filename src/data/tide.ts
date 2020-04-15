@@ -18,11 +18,11 @@ export async function getTide ({
   }
 
   const result = await axios.get(baseUri, { params })
-  logger.info(result)
+  //logger.info(result)
   const {
     data: { extremes }
   } = result
-  logger.info(extremes)
+  // logger.info(extremes)
 
   return extremes.map((extreme: any) => ({
     height: extreme.height,
