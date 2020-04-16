@@ -42,4 +42,7 @@ export interface Route extends Location {
   name: string
   direction: Direction
   rating?: number
+  tideRatings: {
+    [index: string]: number
+  }
 }

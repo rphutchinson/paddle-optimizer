@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { Location, Tide } from '../models'
 import logger from '../logger'
-import { mockResponse } from '../testData/tideData'
 
 const apiKey = process.env.WORLD_TIDES_API_KEY as string
 export const baseUri = 'https://www.worldtides.info/api'
